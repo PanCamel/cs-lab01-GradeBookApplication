@@ -49,4 +49,19 @@ public class RankedGradeBook:BaseGradeBook
         }
         return 'F';
     }
+
+    // [ ] Override `RankedGradeBook`'s `CalculateStatistics` method
+    // - [ ] Short circuit the method if there are less than 5 students.
+    // - If there are less than 5 students write "Ranked grading requires at least 5 students." to the Console.
+    // - If there are 5 or more students call the base class's `CalculateStatistics` method using `base.CalculateStatistics`.
+
+    public override void CalculateStatistics()
+    {
+        if (Students.Count < 5)
+        {
+            Console.WriteLine("Ranked grading requires at least 5 students.");
+            return;
+        }
+        base.CalculateStatistics(); 
+    }
 }
